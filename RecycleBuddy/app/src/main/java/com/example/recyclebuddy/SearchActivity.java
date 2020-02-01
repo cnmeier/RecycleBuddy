@@ -157,7 +157,7 @@ public class SearchActivity extends AppCompatActivity {
                     // Pass data to onPostExecute method
                     Log.w("SearchActivity", result.toString());
                     ObjectMapper mapper = new ObjectMapper();
-                    Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
+                    Map<String,String> map = mapper.readValue(result.toString(), Map.class);
                     Log.w("SearchActivity",map.values().toString());
 
 
