@@ -13,4 +13,18 @@
     <string name="recycle_label">Recycling</string>
     <string name="compost_label">Composting</string>
     <string name="trash_label">Trash</string>
+
+    <string name="do_recycle_bulleted_list">
+        <li>Rigid plastics/bottles </li>\n
+        <li>Paper and cardboard (cereal/snack cardboard boxes, phonebooks, magazines, mail, office paper, newspaper)</li>\n
+        <li>Metals (tin, aluminum, and steel cans)</li>\n
+        <li>Glass (soft drink and beer bottles, wine and liquor bottles, food containers or jars)</li>
+    </string>
+
+    <string name="dont_recycle_bulleted_list">
+        <li>Loose plastic bags (plastic shopping bags and stretch wrap)</li>\n
+        <li>Foam cups and containers (egg cartons, take out containers, and drinking cups)</li>\n
+        <li>Soiled food items (food soiled containers and soiled paper products)</li>\n
+        <li>Other (broken/sharp glass, fast food packaging, and plastic utensils)</li>
+    </string>
 </resources>
