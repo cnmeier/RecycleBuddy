@@ -106,7 +106,7 @@ public class SearchActivity extends AppCompatActivity {
         public String doInBackground(String... params) {
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
-                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Cheddar%20Cheese");
+                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Banana");
 
             } catch (MalformedURLException e) {
 
@@ -157,8 +157,13 @@ public class SearchActivity extends AppCompatActivity {
                     // Pass data to onPostExecute method
                     Log.w("SearchActivity", result.toString());
                     ObjectMapper mapper = new ObjectMapper();
-                    Map<String,String> map = mapper.readValue(result.toString(), Map.class);
+                    Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
                     Log.w("SearchActivity",map.values().toString());
+                    // Start at 2
+                    for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
+                        Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
+                    }
+
 
 
 
