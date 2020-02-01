@@ -56,7 +56,8 @@
         android:background="@color/darkGrey"
         android:text="@string/signup_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:onClick="gosignup" />
 
 
 </RelativeLayout>
