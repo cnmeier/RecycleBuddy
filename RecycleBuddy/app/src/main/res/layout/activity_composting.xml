@@ -17,53 +17,48 @@
         android:textSize="32dp" />
 
     <TextView
+        android:id="@+id/heading1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="130dp"
-        android:text="\tWhat to compost: "
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="85dp"
+        android:text="Do Compost: "
         android:textColor="#014421"
-        android:textSize="24dp" />
+        android:textSize="20dp" />
 
     <TextView
+        android:id="@+id/docompost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="190dp"
-        android:text="\t\t\t- fruits and vegetables
-                      \n\t\t\t- bread, egg shells, nut shells
-                      \n\t\t\t- coffee grinds, coffee filters, and tea bags
-                      \n\t\t\t- leaves, flowers and tree trimmings
-                      \n\t\t\t- paper without colored ink"
+        android:layout_below="@+id/heading1"
+        android:text="@string/do_compost_bulleted_list"
+        android:textSize="16dp"
         android:textColor="#014421"
-        android:textSize="18dp" />
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        />
 
     <TextView
+        android:id="@+id/heading2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="330dp"
-        android:text="\tWhat not to compost: "
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="300dp"
+        android:text="Don't Compost: "
         android:textColor="#014421"
-        android:textSize="24dp" />
+        android:textSize="20dp" />
 
     <TextView
+        android:id="@+id/dontcompost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="390dp"
-        android:text="\t\t\t- meat, fish or dairy
-                      \n\t\t\t- fats, grease or oil
-                      \n\t\t\t- cat or dog poop
-                      \n\t\t\t- pesticide-treated, diseased or poisonous \n\t\t\t\t plants
-                      \n\t\t\t- plastic, metal or glass"
+        android:layout_below="@+id/heading2"
+        android:text="@string/dont_compost_bulleted_list"
+        android:textSize="16dp"
         android:textColor="#014421"
-        android:textSize="18dp" />
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        />
 
     <Button
         android:id="@+id/back"

@@ -27,4 +27,20 @@
         <li>Soiled food items (food soiled containers and soiled paper products)</li>\n
         <li>Other (broken/sharp glass, fast food packaging, and plastic utensils)</li>
     </string>
+
+    <string name="do_compost_bulleted_list">
+        <li>Fruits and vegetables</li>\n
+        <li>Bread, egg shells, and nut shells</li>\n
+        <li>Coffee grinds, coffee filters, and tea bags</li>\n
+        <li>Leaves, flowers and tree trimmings</li>\n
+        <li>Paper without colored ink</li>
+    </string>
+
+    <string name="dont_compost_bulleted_list">
+        <li>Meat, fish or dairy</li>\n
+        <li>Fats, grease or oil</li>\n
+        <li>Cat or dog poop</li>\n
+        <li>Pesticide-treated, diseased or poisonous plants</li>\n
+        <li>Plastic, metal or glass</li>
+    </string>
 </resources>
