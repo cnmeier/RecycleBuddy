@@ -10,11 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -154,14 +156,11 @@ public class SearchActivity extends AppCompatActivity {
 
                     // Pass data to onPostExecute method
                     Log.w("SearchActivity", result.toString());
-                    Gson gson = new Gson();
-                    JSONObject jsonobj = gson.fromJson(result.toString(), JSONObject.class);
-                    Log.w("SearchActivity", jsonobj.keys().toString());
-                    Iterator<String> keys = jsonobj.keys();
-                    while(keys.hasNext()){
-                        String key = keys.next();
-                        Log.w("SearchActivity", jsonobj.get(key).toString());
-                    }
+                    ObjectMapper mapper = new ObjectMapper();
+                    Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
+                    Log.w("SearchActivity",map.values().toString());
+
+
 
                     return (result.toString());
                 } else {
@@ -172,11 +171,7 @@ public class SearchActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
                 return e.toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-                return e.toString();
-            }
-            finally {
+            } finally {
                 conn.disconnect();
             }
 
