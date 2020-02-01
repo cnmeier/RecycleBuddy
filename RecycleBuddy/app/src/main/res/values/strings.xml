@@ -8,6 +8,6 @@
     <string name="articles_label">Articles</string>
     <string name="store_label">Store</string>
     <string name="profile_label">Profile</string>
-    <string name="search_hint"><Search</string>
+    <string name="search_hint">Search</string>
     <string name="store_explanation">Store</string>
 </resources>
