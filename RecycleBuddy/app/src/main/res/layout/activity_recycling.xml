@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="320dp"
         android:text="Don't Recycle: "
         android:textColor="#014421"
         android:textSize="20dp" />
@@ -59,6 +59,13 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="560dp"
+        android:src="@drawable/recycle" />
 
     <Button
         android:id="@+id/back"
