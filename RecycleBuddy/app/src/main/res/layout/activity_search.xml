@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="160dp"
         android:text="Enter an item to see how it should be disposed"
-        android:textColor="#014421"
+        android:textColor="@color/textColor"
         android:textAlignment="center"
         android:textSize="20dp" />
 
@@ -112,20 +112,19 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/simpleSearchView"
+        android:layout_below="@+id/simpleSearchView"
         >
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_below="@+id/simpleSearchView"
             android:background="@color/background"
-            android:layout_below="@+id/searchID"
             android:divider="@color/darkGrey"
             android:shrinkColumns="1"
             >
 
         </TableLayout>
     </ScrollView>
-
 
 </RelativeLayout>
