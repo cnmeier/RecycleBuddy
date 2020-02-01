@@ -47,65 +47,61 @@
         android:textAlignment="center"
         android:textSize="20dp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/search"
-        style="@style/LabelStyle"
         android:layout_width="100dp"
+        android:layout_height="75dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/search_label"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        android:background="@drawable/button_border"
-        android:onClick="gosearch" />
+        android:src="@drawable/search"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/articles"
-        style="@style/LabelStyle"
         android:layout_width="100dp"
+        android:layout_height="75dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
-        android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/search"
-        android:text="@string/articles_label"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        android:background="@drawable/button_border"
-        android:onClick="goarticles" />
-
-    <Button
-        android:id="@+id/store"
-        style="@style/LabelStyle"
-        android:layout_width="100dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="256dp"
-        android:layout_marginBottom="0dp"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/articles"
-        android:text="@string/store_label"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        android:background="@drawable/button_border"
-        android:onClick="gostore" />
+        android:src="@drawable/news"/>
 
-    <Button
-        android:id="@+id/profile"
-        style="@style/LabelStyle"
+    <ImageButton
+        android:id="@+id/store"
         android:layout_width="100dp"
+        android:layout_height="75dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/articles"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/store"/>
+
+    <ImageButton
+        android:id="@+id/profile"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/store"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/store"
-        android:text="@string/profile_label"
-        android:textColor="@android:color/white"
-        android:textSize="15dp"
-        android:background="@drawable/button_border"
-        android:onClick="goprofile" />
+        android:src="@drawable/profile"/>
 
 </RelativeLayout>
