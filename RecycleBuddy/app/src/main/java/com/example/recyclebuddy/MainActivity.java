@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,12 +41,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText email = (EditText) findViewById(R.id.emailID);
+        EditText password = (EditText) findViewById(R.id.passwordID);
+        Button login = (Button) findViewById(R.id.loginID);
+
         connectMongo();
+        login.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    public void onClick(View view)
+                    {
+                        String emailText = email.getText().toString();
+                        Log.w("SignupActivity", emailText);
+                        String passwordText = password.getText().toString();
+                        Log.w("SignupActivity", passwordText);
+                        loginUser(emailText, passwordText);
+                    }
+                });
 
     }
 
-    public void loginUser() {
-        UserPasswordCredential credential = new UserPasswordCredential("<email>", "<password>");
+    public void loginUser(String email, String password) {
+        UserPasswordCredential credential = new UserPasswordCredential(email, password);
         Stitch.getDefaultAppClient().getAuth().loginWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<StitchUser>() {
                                            @Override

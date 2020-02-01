@@ -32,7 +32,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         // First check to see if email fields and password fields match
         Button submit = (Button) findViewById(R.id.signupID);
-        EditText email = (EditText) findViewById(R.id.firstID);
+        EditText email = (EditText) findViewById(R.id.emailID);
         EditText password = (EditText) findViewById(R.id.passwordID);
         String emailText;
         String passwordText;
@@ -42,7 +42,9 @@ public class SignupActivity extends AppCompatActivity {
                     public void onClick(View view)
                     {
                         String emailText = email.getText().toString();
+                        Log.w("SignupActivity", emailText);
                         String passwordText = password.getText().toString();
+                        Log.w("SignupActivity", passwordText);
                         signup(emailText, passwordText);
                     }
                 });
