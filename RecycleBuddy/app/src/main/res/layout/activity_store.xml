@@ -38,6 +38,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="120dp"
+        android:textColor="#014421"
         android:background="#FFFFFF"
         android:iconifiedByDefault="false"
         android:queryHint="Enter your email here" />
