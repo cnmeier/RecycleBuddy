@@ -10,6 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,6 +25,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.reflect.Method;
+
 
 import static java.lang.String.valueOf;
 import static org.apache.http.params.CoreConnectionPNames.CONNECTION_TIMEOUT;
@@ -146,6 +154,15 @@ public class SearchActivity extends AppCompatActivity {
 
                     // Pass data to onPostExecute method
                     Log.w("SearchActivity", result.toString());
+                    Gson gson = new Gson();
+                    JSONObject jsonobj = gson.fromJson(result.toString(), JSONObject.class);
+                    Log.w("SearchActivity", jsonobj.keys().toString());
+                    Iterator<String> keys = jsonobj.keys();
+                    while(keys.hasNext()){
+                        String key = keys.next();
+                        Log.w("SearchActivity", jsonobj.get(key).toString());
+                    }
+
                     return (result.toString());
                 } else {
 
@@ -155,7 +172,11 @@ public class SearchActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
                 return e.toString();
-            } finally {
+            } catch (JSONException e) {
+                e.printStackTrace();
+                return e.toString();
+            }
+            finally {
                 conn.disconnect();
             }
 
