@@ -24,10 +24,25 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ArticlesActivity">
+        </activity>
+
+        <activity android:name=".ChangePasswordActivity">
+        </activity>
+
+        <activity android:name=".ProfileActivity">
+        </activity>
+
         <activity android:name=".SearchActivity">
         </activity>
 
+        <activity android:name=".SettingsActivity">
+        </activity>
+
         <activity android:name=".SignupActivity">
+        </activity>
+
+        <activity android:name=".StoreActivity">
         </activity>
 
     </application>

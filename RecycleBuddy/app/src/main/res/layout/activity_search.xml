@@ -61,7 +61,8 @@
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/search" />
+        android:src="@drawable/search"
+        android:onClick="goSearch"/>
 
     <ImageButton
         android:id="@+id/articles"
@@ -75,7 +76,8 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/news" />
+        android:src="@drawable/news"
+        android:onClick="goNews"/>
 
     <ImageButton
         android:id="@+id/store"
@@ -89,7 +91,8 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/store" />
+        android:src="@drawable/store"
+        android:onClick="goStore"/>
 
     <ImageButton
         android:id="@+id/profile"
@@ -104,7 +107,8 @@
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/profile" />
+        android:src="@drawable/profile"
+        android:onClick="goProfile"/>
 
     <ScrollView
         android:layout_width="wrap_content"
