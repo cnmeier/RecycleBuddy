@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/signupLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Sign Up"
+        android:textSize="30dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/emailID"
+        android:hint="@string/email_label"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/signupLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:ems="8"
+        />
+
+    <EditText
+        android:id="@+id/firstID"
+        android:hint="First Name"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/emailID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:ems="8"
+        />
+
+
+    <EditText
+        android:id="@+id/lastID"
+        android:hint="Last Name"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/firstID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:ems="8"
+        />
+
+
+    <EditText
+        android:id="@+id/passwordID"
+        android:hint="@string/password_label"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/lastID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:ems="8"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/passwordConfID"
+        android:hint="Confirm Password"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/passwordID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:ems="8"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/signupID"
+        style="@style/LabelStyle"
+        android:background="@color/darkGrey"
+        android:layout_below="@+id/passwordConfID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:textColor="@android:color/white"
+        android:text="Submit"
+        />
+
+    <Button
+        android:id="@+id/cancelID"
+        style="@style/LabelStyle"
+        android:background="@android:color/white"
+        android:layout_below="@+id/signupID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:text="Cancel"
+        />
+
+</RelativeLayout>
