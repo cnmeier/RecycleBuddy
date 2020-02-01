@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         String passwordText = password.getText().toString();
                         Log.w("SignupActivity", passwordText);
                         loginUser(emailText, passwordText);
+                        gosearch(view);
                     }
                 });
 
