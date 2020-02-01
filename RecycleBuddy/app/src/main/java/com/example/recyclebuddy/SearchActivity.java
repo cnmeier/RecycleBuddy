@@ -8,7 +8,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -30,6 +34,9 @@ import java.util.List;
 import java.lang.reflect.Method;
 
 
+
+
+
 import static java.lang.String.valueOf;
 import static org.apache.http.params.CoreConnectionPNames.CONNECTION_TIMEOUT;
 
@@ -42,10 +49,34 @@ public class SearchActivity extends AppCompatActivity {
     public static final int READ_TIMEOUT = 15000;
     final String apiKey = "TwhquiE2SVeARzinThNtPGrYntlANHxUpyI7iXGc";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final SearchView searchtext;
+        final Button searchbutton;
         setContentView(R.layout.activity_search);
+
+        searchtext  = (SearchView) findViewById(R.id.simpleSearchView);
+        searchbutton = (Button) findViewById(R.id.searchButton);
+
+        searchtext.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.w("SearchActivity", query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText.length() >= 1){
+                    Log.w("SearchActivity", newText);
+                }
+                return false;
+            }
+        });
+
+
 
         // Connecting to Food Data website to search for products
         AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter();
@@ -101,15 +132,17 @@ public class SearchActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    /**
+     * This class allows us to query databases from the FDA to grab nutrient facts for user queries
+     */
     protected class AsyncRetrieveFilter extends AsyncTask<String, String, String> {
         @Override
         public String doInBackground(String... params) {
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
-                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Bagel+Bites&requireAllWords=True");
+                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=chicken+taquitos&requireAllWords=True");
 
             } catch (MalformedURLException e) {
-
                 e.printStackTrace();
                 return e.toString();
             }
@@ -125,8 +158,6 @@ public class SearchActivity extends AppCompatActivity {
                 //conn.setRequestProperty("Accept", "application/json");
                 Log.w("SearchActivity", conn.getRequestMethod());
                 Log.w("SearchActivity", conn.getHeaderField(0));
-                //conn.setDoInput(true);
-                //conn.setDoOutput(true);
 
             } catch (IOException e1) {
                 // TODO Auto-generated catch block
