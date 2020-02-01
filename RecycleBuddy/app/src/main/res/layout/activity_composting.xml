@@ -16,6 +16,55 @@
         android:textColor="#014421"
         android:textSize="32dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="130dp"
+        android:text="\tWhat to compost: "
+        android:textColor="#014421"
+        android:textSize="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="190dp"
+        android:text="\t\t\t- fruits and vegetables
+                      \n\t\t\t- bread, egg shells, nut shells
+                      \n\t\t\t- coffee grinds, coffee filters, and tea bags
+                      \n\t\t\t- leaves, flowers and tree trimmings
+                      \n\t\t\t- paper without colored ink"
+        android:textColor="#014421"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="330dp"
+        android:text="\tWhat not to compost: "
+        android:textColor="#014421"
+        android:textSize="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="390dp"
+        android:text="\t\t\t- meat, fish or dairy
+                      \n\t\t\t- fats, grease or oil
+                      \n\t\t\t- cat or dog poop
+                      \n\t\t\t- pesticide-treated, diseased or poisonous \n\t\t\t\t plants
+                      \n\t\t\t- plastic, metal or glass"
+        android:textColor="#014421"
+        android:textSize="18dp" />
+
     <Button
         android:id="@+id/back"
         style="@style/TextStyle"
