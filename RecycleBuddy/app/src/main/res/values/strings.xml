@@ -10,4 +10,7 @@
     <string name="profile_label">Profile</string>
     <string name="search_hint">Search</string>
     <string name="store_explanation">Store</string>
+    <string name="recycle_label">Recycling</string>
+    <string name="compost_label">Composting</string>
+    <string name="trash_label">Trash</string>
 </resources>
