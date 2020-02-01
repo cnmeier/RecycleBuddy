@@ -52,8 +52,20 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets up the screen that follows after the user clicks the signup button
-     * on the first screen
+     * Sets up the screen that follows after the user clicks the store button
+     * on the search screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void gosearch(View v) {
+        Intent intent = new Intent(this, SearchActivity.class);
+        this.startActivity(intent);
+    }
+
+    /**
+     * Sets up the screen that follows after the user clicks the articles button
+     * on the search screen
      *
      * @param v
      *            the screen view
@@ -63,6 +75,29 @@ public class SearchActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    /**
+     * Sets up the screen that follows after the user clicks the store button
+     * on the search screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void gostore(View v) {
+        Intent intent = new Intent(this, StoreActivity.class);
+        this.startActivity(intent);
+    }
+
+    /**
+     * Sets up the screen that follows after the user clicks the profile button
+     * on the search screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goprofile(View v) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        this.startActivity(intent);
+    }
 
     protected class AsyncRetrieveFilter extends AsyncTask<String, String, String> {
         @Override
