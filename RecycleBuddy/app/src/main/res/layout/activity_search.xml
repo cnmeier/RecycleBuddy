@@ -16,34 +16,33 @@
         android:textColor="#014421"
         android:textSize="32dp" />
 
-    <ImageView
-        android:id="@+id/searchButton"
-        android:layout_width="27dp"
-        android:layout_height="23dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_toLeftOf="@+id/simpleSearchView"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#FFFFFF"
-        android:background="@drawable/search" />
-
     <SearchView
         android:id="@+id/simpleSearchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
         android:background="#FFFFFF"
         android:queryHint="Search Here"
         android:iconifiedByDefault="false"/>
+
+    <ImageView
+        android:id="@+id/searchButton"
+        android:layout_width="27dp"
+        android:layout_height="23dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/search" />
 
     <TextView
         android:id="@+id/instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="160dp"
-        android:text="Enter an item to see how it should be disposed"
+        android:layout_below="@id/title"
+        android:text="\nEnter an item to see how it should be disposed"
         android:textColor="@color/textColor"
         android:textAlignment="center"
         android:textSize="20dp" />
