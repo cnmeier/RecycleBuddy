@@ -7,14 +7,14 @@
     tools:context=".SearchActivity">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Recycle Buddy"
-        android:textColor="#014421"
-        android:textSize="32dp" />
+    android:id="@+id/title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    android:text="Recycle Buddy"
+    android:textColor="#014421"
+    android:textSize="32dp" />
 
     <SearchView
         android:id="@+id/simpleSearchView"
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-
+        android:textColor="#014421"
         android:background="#FFFFFF"
         android:queryHint="Search Here"
         android:iconifiedByDefault="false"/>
