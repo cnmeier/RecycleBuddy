@@ -7,6 +7,7 @@
     tools:context=".SearchActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -15,15 +16,15 @@
         android:textColor="#014421"
         android:textSize="48dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/searchButton"
         android:layout_width="27dp"
         android:layout_height="23dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="0dp"
-        android:layout_toRightOf="@+id/simpleSearchView"
+        android:layout_toLeftOf="@+id/simpleSearchView"
         android:layout_centerVertical="true"
-        android:backgroundTint="#014421"
+        android:backgroundTint="#FFFFFF"
         android:background="@drawable/search" />
 
     <SearchView
@@ -41,7 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_below="@id/title"
+        android:layout_above="@id/simpleSearchView"
         android:text="Enter an item to see how it should be disposed"
         android:textColor="#014421"
         android:textAlignment="center"
@@ -103,5 +105,24 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/profile"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchID"
+        >
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/background"
+            android:layout_below="@+id/searchID"
+            android:divider="@color/darkGrey"
+            android:shrinkColumns="1"
+            >
+
+        </TableLayout>
+    </ScrollView>
+
 
 </RelativeLayout>
