@@ -45,7 +45,7 @@
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/news"
+        android:src="@drawable/lightbulb"
         android:onClick="goNews"/>
 
     <ImageButton
