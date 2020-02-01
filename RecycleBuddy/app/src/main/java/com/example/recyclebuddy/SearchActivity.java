@@ -106,7 +106,7 @@ public class SearchActivity extends AppCompatActivity {
         public String doInBackground(String... params) {
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
-                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Banana");
+                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Bagel+Bites&requireAllWords=True");
 
             } catch (MalformedURLException e) {
 
@@ -163,10 +163,6 @@ public class SearchActivity extends AppCompatActivity {
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
                         Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
                     }
-
-
-
-
                     return (result.toString());
                 } else {
 
