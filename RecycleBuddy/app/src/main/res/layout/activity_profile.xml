@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_height="70dp"
+        android:layout_width="100dp"
+        android:text="Settings"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="300dp"
+        android:onClick="goSettings"
+        />
+
+    <TextView
+        android:id="@+id/profileLabel"
+        style="@style/TextStyle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"
+        android:text="@string/profile_label"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profileLabel"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src= "@drawable/profile"
+        />
+
 </RelativeLayout>
