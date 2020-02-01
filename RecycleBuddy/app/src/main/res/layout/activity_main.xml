@@ -6,64 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/logoID"
         android:layout_centerHorizontal="true"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:src= "@drawable/reducereuserecycle"
-        />
+        android:src="@drawable/reducereuserecycle" />
 
     <EditText
         android:id="@+id/emailID"
-        android:hint="@string/email_label"
         style="@style/LabelStyle"
         android:layout_below="@+id/logoID"
-        android:layout_centerHorizontal="true"
-        android:maxLines="1"
-        android:layout_marginTop="10dp"
-        android:textSize="28sp"
-        android:inputType="textEmailAddress"
+        android:layout_marginTop="43dp"
         android:ems="8"
-        />
+        android:hint="@string/email_label"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textSize="28sp" />
 
     <EditText
         android:id="@+id/passwordID"
-        android:hint="@string/password_label"
         style="@style/LabelStyle"
         android:layout_below="@+id/emailID"
-        android:layout_centerHorizontal="true"
-        android:maxLines="1"
-        android:layout_marginTop="10dp"
-        android:textSize="28sp"
-        android:inputType="textPassword"
+        android:layout_marginTop="27dp"
         android:ems="8"
-        />
-
+        android:hint="@string/password_label"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textSize="28sp" />
 
     <Button
         android:id="@+id/loginID"
         style="@style/LabelStyle"
-        android:background="@color/darkGrey"
         android:layout_below="@+id/passwordID"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:textSize="28sp"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="37dp"
+        android:background="@color/darkGrey"
         android:text="@string/login_label"
-        />
+        android:textColor="@android:color/white"
+        android:textSize="28sp" />
 
     <Button
         android:id="@+id/signupID"
         style="@style/LabelStyle"
-        android:background="@color/darkGrey"
         android:layout_below="@+id/loginID"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="28sp"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="19dp"
+        android:background="@color/darkGrey"
         android:text="@string/signup_label"
-        />
+        android:textColor="@android:color/white"
+        android:textSize="28sp" />
 
 
 </RelativeLayout>
