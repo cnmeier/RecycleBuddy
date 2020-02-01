@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".CompostingActivity">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Composting Tips"
+        android:textColor="#014421"
+        android:textSize="32dp" />
+
 </RelativeLayout>
