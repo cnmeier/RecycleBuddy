@@ -32,7 +32,7 @@
         <li>Fruits and vegetables</li>\n
         <li>Bread, egg shells, and nut shells</li>\n
         <li>Coffee grinds, coffee filters, and tea bags</li>\n
-        <li>Leaves, flowers and tree trimmings</li>\n
+        <li>Leaves, flowers, and tree trimmings</li>\n
         <li>Paper without colored ink</li>
     </string>
 
@@ -42,5 +42,23 @@
         <li>Cat or dog poop</li>\n
         <li>Pesticide-treated, diseased or poisonous plants</li>\n
         <li>Plastic, metal or glass</li>
+    </string>
+
+    <string name="do_trash_bulleted_list">
+        <li>Unsanitary items (tissues, diapers, etc.)</li>\n
+        <li>Chip bags and similar wrappings</li>\n
+        <li>Containers that are gunky or greasy with food residue</li>
+    </string>
+
+    <string name="dont_trash_bulleted_list">
+        <li>Fruits and vegetables</li>\n
+        <li>Bread, egg shells, and nut shells</li>\n
+        <li>Coffee grinds, coffee filters, and tea bags</li>\n
+        <li>Leaves, flowers, and tree trimmings</li>\n
+        <li>Paper without colored ink</li>\n
+        <li>Rigid plastics/bottles</li>\n
+        <li>Paper and cardboard (cereal/snack cardboard boxes, phonebooks, magazines, mail, office paper, newspaper)</li>\n
+        <li>Metals (tin, aluminum, and steel cans)</li>\n
+        <li>Glass (soft drink and beer bottles, wine and liquor bottles, food containers or jars)</li>\n
     </string>
 </resources>
