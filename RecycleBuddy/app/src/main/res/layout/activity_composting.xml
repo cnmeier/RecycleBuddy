@@ -60,6 +60,13 @@
         android:padding="10dp"
         />
 
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="560dp"
+        android:src="@drawable/compost" />
+
     <Button
         android:id="@+id/back"
         style="@style/TextStyle"

@@ -6,17 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".TipsActivity">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Tips"
+        android:textColor="#014421"
+        android:textSize="32dp" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/recycle"
+        android:src="@drawable/recycle" />
 
     <Button
         android:id="@+id/recycle"
         style="@style/LabelStyle"
         android:layout_width="250dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="160dp"
         android:background="@color/darkGrey"
         android:text="@string/recycle_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="28dp"
         android:onClick="goRecycling" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/compost"
+        android:src="@drawable/compost" />
 
     <Button
         android:id="@+id/compost"
@@ -31,6 +54,13 @@
         android:textColor="@android:color/white"
         android:textSize="28sp"
         android:onClick="goComposting" />
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/trash"
+        android:src="@drawable/trash" />
 
     <Button
         android:id="@+id/trash"
