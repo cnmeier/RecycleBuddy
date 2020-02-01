@@ -6,23 +6,12 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProfileActivity extends AppCompatActivity {
+public class TipsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
-    }
-
-    /**
-     * Sets up the screen that follows after the user clicks the settings button
-     *
-     * @param v
-     *            the screen view
-     */
-    public void goSettings(View v) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        this.startActivity(intent);
+        setContentView(R.layout.activity_tips);
     }
 
     /**

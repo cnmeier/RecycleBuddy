@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TipsActivity">
+
+    <TextView
+        android:id="@+id/articlesLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="News in Climate Change"
+        android:textSize="32dp"
+        android:textColor="#014421"
+        android:textStyle="bold"
+        />
+
+    <ImageButton
+        android:id="@+id/search"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/search"
+        android:onClick="goSearch"/>
+
+    <ImageButton
+        android:id="@+id/articles"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/search"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/lightbulb"
+        android:onClick="goNews"/>
+
+    <ImageButton
+        android:id="@+id/store"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/articles"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/store"
+        android:onClick="goStore"/>
+
+    <ImageButton
+        android:id="@+id/profile"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@+id/store"
+        android:padding="20dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/profile"
+        android:onClick="goProfile"/>
+
+</RelativeLayout>

@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ArticlesActivity">
+        <activity android:name=".TipsActivity">
         </activity>
 
         <activity android:name=".ChangePasswordActivity">

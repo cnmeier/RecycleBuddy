@@ -8,19 +8,12 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.lang.reflect.Array;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,12 +22,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.lang.reflect.Method;
 
 import static java.lang.String.valueOf;
-import static org.apache.http.params.CoreConnectionPNames.CONNECTION_TIMEOUT;
 
 public class SearchActivity extends AppCompatActivity {
     // URL to Food Data website
@@ -100,7 +89,7 @@ public class SearchActivity extends AppCompatActivity {
      *            the screen view
      */
     public void goNews(View v) {
-        Intent intent = new Intent(this, ArticlesActivity.class);
+        Intent intent = new Intent(this, TipsActivity.class);
         this.startActivity(intent);
     }
 

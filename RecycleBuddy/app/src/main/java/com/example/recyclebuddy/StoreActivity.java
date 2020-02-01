@@ -34,7 +34,7 @@ public class StoreActivity extends AppCompatActivity {
      *            the screen view
      */
     public void goNews(View v) {
-        Intent intent = new Intent(this, ArticlesActivity.class);
+        Intent intent = new Intent(this, TipsActivity.class);
         this.startActivity(intent);
     }
 
