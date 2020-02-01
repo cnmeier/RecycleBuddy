@@ -12,7 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="220dp"
         android:layout_height="220dp"
-        android:src="@drawable/reducereuserecycle" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/emailID"
