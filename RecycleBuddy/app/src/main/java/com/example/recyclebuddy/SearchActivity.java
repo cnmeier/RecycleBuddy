@@ -58,7 +58,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         searchtext  = (SearchView) findViewById(R.id.simpleSearchView);
-        searchbutton = (Button) findViewById(R.id.searchButton);
+        //searchbutton = (Button) findViewById(R.id.searchButton);
 
         searchtext.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
             @Override
