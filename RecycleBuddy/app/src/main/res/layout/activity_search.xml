@@ -50,12 +50,31 @@
     <Button
         android:id="@+id/articles"
         style="@style/LabelStyle"
-        android:layout_marginLeft="20dp"
-        android:background="@color/darkGrey"
         android:layout_below="@+id/instruction"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/darkGrey"
+        android:onClick="goarticles"
         android:text="@string/articles_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
-        android:onClick="goarticles"/>
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/store"
+        style="@style/LabelStyle"
+        android:layout_below="@+id/instruction"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/darkGrey"
+        android:onClick="gostore"
+        android:text="@string/articles_label"
+        android:textColor="@android:color/white"
+        android:textSize="28sp" />
 
 </RelativeLayout>

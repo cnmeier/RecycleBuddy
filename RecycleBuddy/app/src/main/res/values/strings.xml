@@ -5,4 +5,5 @@
     <string name="login_label">LOG IN</string>
     <string name="signup_label">SIGN UP</string>
     <string name="articles_label">Articles</string>
+    <string name="store_label">Store</string>
 </resources>
