@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SignupActivity">
 
     <TextView
         android:id="@+id/signupLabel"
@@ -98,6 +98,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:text="Cancel"
+        android:onClick="cancel"
         />
 
 </RelativeLayout>
