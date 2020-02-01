@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="180dp"
         android:text="Recycle Buddy"
         android:textColor="#014421"
         android:textSize="48dp" />
@@ -48,46 +48,64 @@
         android:textSize="20dp" />
 
     <Button
-        android:id="@+id/articles"
+        android:id="@+id/search"
         style="@style/LabelStyle"
+        android:layout_width="100dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:background="@color/darkGrey"
+        android:text="@string/search_label"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        android:background="@drawable/button_border"
+        android:onClick="gosearch" />
+
+    <Button
+        android:id="@+id/articles"
+        style="@style/LabelStyle"
+        android:layout_width="100dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/search"
         android:text="@string/articles_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="15dp"
+        android:background="@drawable/button_border"
         android:onClick="goarticles" />
 
     <Button
         android:id="@+id/store"
         style="@style/LabelStyle"
+        android:layout_width="100dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/articles"
-        android:background="@color/darkGrey"
         android:text="@string/store_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="15dp"
+        android:background="@drawable/button_border"
         android:onClick="gostore" />
 
     <Button
         android:id="@+id/profile"
         style="@style/LabelStyle"
+        android:layout_width="100dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="256dp"
         android:layout_marginBottom="0dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@+id/store"
-        android:background="@color/darkGrey"
         android:text="@string/profile_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp"
+        android:textSize="15dp"
+        android:background="@drawable/button_border"
         android:onClick="goprofile" />
 
 </RelativeLayout>
