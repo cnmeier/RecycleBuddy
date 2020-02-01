@@ -61,8 +61,7 @@ public class SearchActivity extends AppCompatActivity {
         public String doInBackground(String... params) {
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
-
-                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey);
+                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=Cheddar%20Cheese");
 
             } catch (MalformedURLException e) {
 
@@ -77,8 +76,12 @@ public class SearchActivity extends AppCompatActivity {
                 conn.setRequestMethod("GET");
 
                 // setDoOutput to true as we receive data from json file
-                conn.setDoInput(true);
-                conn.setDoOutput(true);
+                //conn.setRequestProperty("Content-Type", "application/json");
+                //conn.setRequestProperty("Accept", "application/json");
+                Log.w("SearchActivity", conn.getRequestMethod());
+                Log.w("SearchActivity", conn.getHeaderField(0));
+                //conn.setDoInput(true);
+                //conn.setDoOutput(true);
 
             } catch (IOException e1) {
                 // TODO Auto-generated catch block
@@ -92,6 +95,8 @@ public class SearchActivity extends AppCompatActivity {
 
                 // Check if successful connection made
                 Log.w("SearchActivity", valueOf(response_code));
+                // Checking URL passed through
+                Log.w("SearchActivity", url.toString());
                 if (response_code == HttpURLConnection.HTTP_OK) {
 
                     // Read data sent from server
@@ -105,6 +110,7 @@ public class SearchActivity extends AppCompatActivity {
                     }
 
                     // Pass data to onPostExecute method
+                    Log.w("SearchActivity", result.toString());
                     return (result.toString());
                 } else {
 
