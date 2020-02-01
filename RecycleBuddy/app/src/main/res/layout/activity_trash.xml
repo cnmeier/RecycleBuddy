@@ -16,4 +16,13 @@
         android:textColor="#014421"
         android:textSize="32dp" />
 
+    <Button
+        android:id="@+id/back"
+        style="@style/TextStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="27dp"
+        android:onClick="goBack"
+        android:text="Back"
+        android:textSize="28sp" />
+
 </RelativeLayout>

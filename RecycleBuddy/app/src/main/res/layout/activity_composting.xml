@@ -17,7 +17,6 @@
         android:textSize="32dp" />
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
@@ -28,7 +27,6 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
@@ -43,7 +41,6 @@
         android:textSize="18dp" />
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -55,7 +52,6 @@
         android:textSize="24dp" />
 
     <TextView
-        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
@@ -68,5 +64,14 @@
                       \n\t\t\t- plastic, metal or glass"
         android:textColor="#014421"
         android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/back"
+        style="@style/TextStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="27dp"
+        android:onClick="goBack"
+        android:text="Back"
+        android:textSize="28sp" />
 
 </RelativeLayout>
