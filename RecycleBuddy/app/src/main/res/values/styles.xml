@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/background</item>
+        <item name="android:textColorHint">@color/black</item>
     </style>
 
     <style name="TextStyle" parent="@android:style/TextAppearance">
@@ -19,7 +20,8 @@
     </style>
 
     <style name="LabelStyle" parent="TextStyle">
-        <item name="android:background">@color/lightGrey</item>
+        <item name="android:background">@color/offwhite</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>
