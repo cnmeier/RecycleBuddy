@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Recycle Buddy</string>
+    <string name="app_name">RecycleBuddy</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_label">LOG IN</string>
+    <string name="signup_label">SIGN UP</string>
 </resources>
