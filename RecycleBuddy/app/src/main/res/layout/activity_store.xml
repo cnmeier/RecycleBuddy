@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Recycle Buddy Store"
-        android:textSize="30dp"
-        android:textColor="@android:color/black"
+        android:textSize="32dp"
+        android:textColor="#014421"
         android:textStyle="bold"
         />
 
@@ -25,7 +25,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="160dp"
         android:text="Big things coming soon! Enter your email to be the first to know when our store goes live"
         android:textColor="#014421"
         android:textAlignment="center"

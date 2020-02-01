@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ArticlesActivity">
 
+    <TextView
+        android:id="@+id/articlesLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="News in Climate Change"
+        android:textSize="32dp"
+        android:textColor="#014421"
+        android:textStyle="bold"
+        />
+
     <ImageButton
         android:id="@+id/search"
         android:layout_width="100dp"

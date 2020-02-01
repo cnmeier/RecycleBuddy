@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="30dp"
         android:text="Recycle Buddy"
         android:textColor="#014421"
-        android:textSize="48dp" />
+        android:textSize="32dp" />
 
     <ImageView
         android:id="@+id/searchButton"
@@ -42,8 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/title"
-        android:layout_above="@id/simpleSearchView"
+        android:layout_marginTop="160dp"
         android:text="Enter an item to see how it should be disposed"
         android:textColor="#014421"
         android:textAlignment="center"
