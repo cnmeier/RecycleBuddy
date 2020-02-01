@@ -37,6 +37,7 @@
         android:queryHint="Search Here" />
 
     <TextView
+        android:id="@+id/instruction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -45,5 +46,16 @@
         android:textColor="#014421"
         android:textAlignment="center"
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/articles"
+        style="@style/LabelStyle"
+        android:layout_marginLeft="20dp"
+        android:background="@color/darkGrey"
+        android:layout_below="@+id/instruction"
+        android:text="@string/articles_label"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:onClick="goarticles"/>
 
 </RelativeLayout>

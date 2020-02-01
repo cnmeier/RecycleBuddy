@@ -2,11 +2,13 @@
 
 package com.example.recyclebuddy;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -39,6 +41,18 @@ public class SearchActivity extends AppCompatActivity {
         AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter();
         foodSearch.execute();
 
+    }
+
+    /**
+     * Sets up the screen that follows after the user clicks the signup button
+     * on the first screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goarticles(View v) {
+        Intent intent = new Intent(this, ArticlesActivity.class);
+        this.startActivity(intent);
     }
 
 
