@@ -46,7 +46,8 @@
         android:background="@color/darkGrey"
         android:text="@string/login_label"
         android:textColor="@android:color/white"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:onClick="gosearch"/>
 
     <Button
         android:id="@+id/signupID"

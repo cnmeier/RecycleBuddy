@@ -25,4 +25,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignupActivity.class);
         this.startActivity(intent);
     }
+
+    /**
+     * Sets up the screen that follows after the user clicks the login button
+     * on the first screen and their username/password combination were correct
+     *
+     * @param v
+     *            the screen view
+     */
+    public void gosearch(View v) {
+        Intent intent = new Intent(this, SearchActivity.class);
+        this.startActivity(intent);
+    }
 }
