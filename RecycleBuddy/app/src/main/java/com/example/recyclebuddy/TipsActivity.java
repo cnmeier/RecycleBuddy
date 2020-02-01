@@ -61,4 +61,40 @@ public class TipsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileActivity.class);
         this.startActivity(intent);
     }
+
+    /**
+     * Sets up the screen that follows after the user clicks the recycling button
+     * on the tips screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goRecycling(View v) {
+        Intent intent = new Intent(this, RecyclingActivity.class);
+        this.startActivity(intent);
+    }
+
+    /**
+     * Sets up the screen that follows after the user clicks the composting button
+     * on the tips screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goComposting(View v) {
+        Intent intent = new Intent(this, CompostingActivity.class);
+        this.startActivity(intent);
+    }
+
+    /**
+     * Sets up the screen that follows after the user clicks the trash button
+     * on the tips screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goTrash(View v) {
+        Intent intent = new Intent(this, TrashActivity.class);
+        this.startActivity(intent);
+    }
 }
