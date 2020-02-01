@@ -17,6 +17,7 @@ import com.mongodb.stitch.android.core.auth.StitchUser;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
 import com.mongodb.stitch.core.auth.providers.anonymous.AnonymousCredential;
+import com.mongodb.stitch.core.auth.providers.userpassword.UserPasswordCredential;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteUpdateOptions;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteUpdateResult;
 import com.mongodb.stitch.core.services.mongodb.remote.sync.ChangeEventListener;
@@ -42,7 +43,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    public void loginUser() {
+        UserPasswordCredential credential = new UserPasswordCredential("<email>", "<password>");
+        Stitch.getDefaultAppClient().getAuth().loginWithCredential(credential)
+                .addOnCompleteListener(new OnCompleteListener<StitchUser>() {
+                                           @Override
+                                           public void onComplete(@NonNull final Task<StitchUser> task) {
+                                               if (task.isSuccessful()) {
+                                                   Log.d("stitch", "Successfully logged in as user " + task.getResult().getId());
+                                               } else {
+                                                   Log.e("stitch", "Error logging in with email/password auth:", task.getException());
+                                               }
+                                           }
+                                       }
+                );
+    }
 
     final StitchAppClient client =
             Stitch.initializeDefaultAppClient("recyclebuddy-opnht");
@@ -54,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
             mongoClient.getDatabase("Items").getCollection("DBItems");
 
     public void connectMongo() {
+        Log.w("MainActivity", client.toString());
+        Log.w("MainActivity", mongoClient.toString());
+        Log.w("MainActivity", coll.toString());
+
         client.getAuth().loginWithCredential(new AnonymousCredential()).continueWithTask(
+                //getApplicationContext().unbindService();
+
                 new Continuation<StitchUser, Task<RemoteUpdateResult>>() {
 
                     @Override
@@ -67,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         final Document updateDoc = new Document(
                                 "owner_id",
                                 task.getResult().getId()
+
                         );
 
                         updateDoc.put("number", 42);
@@ -92,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<List<Document>> task) {
                 if (task.isSuccessful()) {
+                    StitchUser currUser = client.getAuth().getUser();
                     Log.d("STITCH", "Found docs: " + task.getResult().toString());
                     return;
                 }
