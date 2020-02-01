@@ -67,6 +67,18 @@ public class SearchActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    /**
+     * Sets up the screen that follows after the user clicks the profile button
+     * on the search screen
+     *
+     * @param v
+     *            the screen view
+     */
+    public void goprofile(View v) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        this.startActivity(intent);
+    }
+
     protected class AsyncRetrieveFilter extends AsyncTask<String, String, String> {
         @Override
         public String doInBackground(String... params) {
