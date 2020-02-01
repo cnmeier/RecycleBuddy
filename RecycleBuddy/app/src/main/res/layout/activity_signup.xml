@@ -87,6 +87,7 @@
         android:textSize="28sp"
         android:textColor="@android:color/white"
         android:text="Submit"
+        android:onClick="cancel"
         />
 
     <Button
