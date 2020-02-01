@@ -33,10 +33,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.Method;
 
-
-
-
-
 import static java.lang.String.valueOf;
 import static org.apache.http.params.CoreConnectionPNames.CONNECTION_TIMEOUT;
 
@@ -91,7 +87,7 @@ public class SearchActivity extends AppCompatActivity {
      * @param v
      *            the screen view
      */
-    public void gosearch(View v) {
+    public void goSearch(View v) {
         Intent intent = new Intent(this, SearchActivity.class);
         this.startActivity(intent);
     }
@@ -103,7 +99,7 @@ public class SearchActivity extends AppCompatActivity {
      * @param v
      *            the screen view
      */
-    public void goarticles(View v) {
+    public void goNews(View v) {
         Intent intent = new Intent(this, ArticlesActivity.class);
         this.startActivity(intent);
     }
@@ -115,7 +111,7 @@ public class SearchActivity extends AppCompatActivity {
      * @param v
      *            the screen view
      */
-    public void gostore(View v) {
+    public void goStore(View v) {
         Intent intent = new Intent(this, StoreActivity.class);
         this.startActivity(intent);
     }
@@ -127,7 +123,7 @@ public class SearchActivity extends AppCompatActivity {
      * @param v
      *            the screen view
      */
-    public void goprofile(View v) {
+    public void goProfile(View v) {
         Intent intent = new Intent(this, ProfileActivity.class);
         this.startActivity(intent);
     }
