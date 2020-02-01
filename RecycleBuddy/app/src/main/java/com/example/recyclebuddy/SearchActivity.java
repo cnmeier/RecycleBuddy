@@ -49,6 +49,13 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Log.w("SearchActivity", query);
+
+                query = query.replace(" ", "+");
+
+                // Connecting to Food Data website to search for products
+                AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter(query);
+                foodSearch.execute();
+
                 return false;
             }
 
@@ -63,9 +70,7 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-        // Connecting to Food Data website to search for products
-        AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter();
-        foodSearch.execute();
+
 
     }
 
@@ -121,11 +126,19 @@ public class SearchActivity extends AppCompatActivity {
      * This class allows us to query databases from the FDA to grab nutrient facts for user queries
      */
     protected class AsyncRetrieveFilter extends AsyncTask<String, String, String> {
+
+        String query;
+
+        AsyncRetrieveFilter(String query){
+            this.query = query;
+        }
+
+
         @Override
         public String doInBackground(String... params) {
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
-                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=chicken+taquitos&requireAllWords=True");
+                url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=" + this.query + "&requireAllWords=True");
 
             } catch (MalformedURLException e) {
                 e.printStackTrace();
