@@ -1,6 +1,7 @@
 package com.example.recyclebuddy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
                                                } else {
                                                    Log.e("MainActivity", "Error logging in with email/password auth:", task.getException());
-
+                                                    showDialog();
                                                }
                                            }
                                        }
@@ -234,6 +235,10 @@ public class MainActivity extends AppCompatActivity {
     }
  */
 
-
+    public void showDialog() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Incorrect password!");
+        alert.show();
+    }
 
 }
