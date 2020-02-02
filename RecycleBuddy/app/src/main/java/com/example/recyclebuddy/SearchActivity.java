@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Array;
@@ -68,11 +69,17 @@ public class SearchActivity extends AppCompatActivity {
 
                 try {
                     String descripAndBrand = foodSearch.execute().get();
-                    String[] itemsSplit = descripAndBrand.split("&");
-                    for(int i = 0; i < itemsSplit.length; i++){
-                        // Make the things
+                    if(descripAndBrand != ""){
+                        String[] itemsSplit = descripAndBrand.split("&");
+                        for(int i = 0; i < itemsSplit.length; i++){
+                            // Make the things
+                            tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+                            addItemEntitys(tableLayout, itemsSplit[i].toLowerCase());
+                        }
+                    }
+                    else{
                         tableLayout = (TableLayout) findViewById(R.id.tableLayout);
-                        addItemEntitys(tableLayout, itemsSplit[i].toLowerCase());
+                        addItemEntitys(tableLayout, query.replace("+", " ")+ " did not match any items");
                     }
 
                 }catch(ExecutionException e){
