@@ -51,34 +51,35 @@
         android:textSize="28sp" />
 
     <Button
-        android:id="@+id/loginID"
-        style="@style/LabelStyle"
-        android:layout_width="138dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/passwordID"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="52dp"
-        android:background="@color/darkGrey"
-        android:onClick="gosearch"
-        android:text="@string/login_label"
-        android:textColor="@android:color/white"
-        android:textSize="28sp" />
-
-    <Button
         android:id="@+id/signupID"
         style="@style/LabelStyle"
         android:layout_width="138dp"
         android:layout_height="70dp"
         android:layout_below="@+id/passwordID"
         android:layout_alignRight="@+id/loginID"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="175dp"
+        android:layout_marginRight="38dp"
         android:background="@color/darkGrey"
         android:onClick="gosignup"
         android:text="@string/signup_label"
+        android:textColor="@android:color/white"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/loginID"
+        style="@style/LabelStyle"
+        android:layout_width="138dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/passwordID"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="46dp"
+        android:background="@color/darkGrey"
+        android:onClick="gosearch"
+        android:text="@string/login_label"
         android:textColor="@android:color/white"
         android:textSize="28sp" />
 
@@ -87,7 +88,7 @@
         style="@style/LabelStyle"
         android:layout_width="170dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/signupID"
+        android:layout_below="@+id/loginID"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="175dp"
