@@ -166,7 +166,8 @@ public class SearchActivity extends AppCompatActivity {
 
         textView.setText(descripAndBrand);
 
-        textView.setHeight(200);
+        //textView.setHeight(200);
+        textView.setPadding(0,10, 20, 50);
         textView.setWidth(1100);
 
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
