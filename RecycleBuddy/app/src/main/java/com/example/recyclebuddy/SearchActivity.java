@@ -1,14 +1,19 @@
 package com.example.recyclebuddy;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -127,6 +132,30 @@ public class SearchActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    public void addItemEntity(TableLayout layout, String description, String brandOwner){
+        TableRow tableRow = new TableRow(getApplicationContext());
+        tableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, 200));
+
+        tableRow.setBackgroundColor(Color.parseColor("#DDDDDD"));
+
+        layout.addView(tableRow);
+        // Add text view to the new row
+        TextView textView = new TextView(getApplicationContext());
+        textView.setTextSize(18f);
+        textView.setTextColor(Color.BLACK);
+        textView.setBackgroundColor(Color.parseColor("#DDDDDD"));
+
+        //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
+        textView.setText(description + " " + brandOwner);
+        textView.setHeight(200);
+        textView.setWidth(220);
+        textView.setGravity(Gravity.CENTER_HORIZONTAL);
+
+
+        tableRow.addView(textView);
+
+    }
+
     /**
      * This class allows us to query databases from the FDA to grab nutrient facts for user queries
      */
@@ -138,11 +167,13 @@ public class SearchActivity extends AppCompatActivity {
             this.query = query;
         }
 
+        //addItemEntitys(tableLayout, allItems);
+
 
         @Override
         public String doInBackground(String... params) {
-            String description;
-            String brandOwner;
+            String description = "";
+            String brandOwner = "";
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
                 url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=" + this.query + "&requireAllWords=True");
@@ -195,7 +226,9 @@ public class SearchActivity extends AppCompatActivity {
                     ObjectMapper mapper = new ObjectMapper();
                     Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
                     Log.w("SearchActivity",map.values().toString());
+                    
                     String items  = "";
+
                     // Start at 2
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
                         String item = map.values().toString().split("\\{")[i];
@@ -221,6 +254,10 @@ public class SearchActivity extends AppCompatActivity {
                         }catch(Exception e){
                             Log.w("Search", e);
                         }
+                        // Make the things
+                        TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+                        addItemEntity(tableLayout, description, brandOwner);
+
 
                     }
                     return (items);
