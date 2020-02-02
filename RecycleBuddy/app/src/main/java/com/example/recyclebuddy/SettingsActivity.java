@@ -53,18 +53,6 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     /**
-     * Sets up the screen that allows the user to change their password which is
-     * under their settings
-     *
-     * @param v
-     *            the screen view
-     */
-    public void goChange(View v) {
-        Intent intent = new Intent(this, ChangePasswordActivity.class);
-        this.startActivity(intent);
-    }
-
-    /**
      * Sets up the login screen that the user goes to after choosing to logout
      *
      * @param v
