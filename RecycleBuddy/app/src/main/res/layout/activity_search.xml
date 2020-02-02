@@ -13,6 +13,7 @@
     android:layout_centerHorizontal="true"
     android:layout_marginTop="30dp"
     android:text="Recycle Buddy"
+    android:textStyle="bold"
     android:textColor="#014421"
     android:textSize="32dp" />
 
