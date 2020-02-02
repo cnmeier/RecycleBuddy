@@ -37,14 +37,40 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
+ /**
+    final StitchAppClient client =
+            Stitch.initializeDefaultAppClient("recyclebuddy-opnht");
 
+    final RemoteMongoClient mongoClient =
+            client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas");
 
+    final RemoteMongoCollection<Document> coll =
+            mongoClient.getDatabase("Items").getCollection("DBItems");
+*/
+
+    StitchAppClient client;
+
+    RemoteMongoClient mongoClient;
+
+    RemoteMongoCollection<Document> coll;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
+            client =
+                    Stitch.initializeDefaultAppClient("recyclebuddy-opnht");
+
+            mongoClient =
+                    client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas");
+
+            coll =
+                    mongoClient.getDatabase("Items").getCollection("DBItems");
+        }catch(Exception e){
+            Log.w("MainActivity", e);
+        }
 
         EditText email = (EditText) findViewById(R.id.emailID);
         EditText password = (EditText) findViewById(R.id.passwordID);
@@ -88,14 +114,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    final StitchAppClient client =
-            Stitch.initializeDefaultAppClient("recyclebuddy-opnht");
-
-    final RemoteMongoClient mongoClient =
-            client.getServiceClient(RemoteMongoClient.factory, "mongodb-atlas");
-
-    final RemoteMongoCollection<Document> coll =
-            mongoClient.getDatabase("Items").getCollection("DBItems");
 
     public void connectMongo() {
         Log.w("MainActivity", client.toString());
