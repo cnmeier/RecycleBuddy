@@ -36,6 +36,10 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         EditText password = (EditText) findViewById(R.id.passwordID);
         Button login = (Button) findViewById(R.id.loginID);
 
-        connectMongo();
+        //connectMongo();
         login.setOnClickListener(
                 new View.OnClickListener()
                 {
@@ -56,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         String passwordText = password.getText().toString();
                         Log.w("SignupActivity", passwordText);
                         loginUser(emailText, passwordText);
-                        gosearch(view);
+
                     }
                 });
 
@@ -69,14 +73,19 @@ public class MainActivity extends AppCompatActivity {
                                            @Override
                                            public void onComplete(@NonNull final Task<StitchUser> task) {
                                                if (task.isSuccessful()) {
-                                                   Log.d("stitch", "Successfully logged in as user " + task.getResult().getId());
+                                                   Log.d("MainActivity", "Successfully logged in as user " + task.getResult().getId());
+                                                    gosearch(null);
+
                                                } else {
-                                                   Log.e("stitch", "Error logging in with email/password auth:", task.getException());
+                                                   Log.e("MainActivity", "Error logging in with email/password auth:", task.getException());
+
                                                }
                                            }
                                        }
                 );
+
     }
+
 
     final StitchAppClient client =
             Stitch.initializeDefaultAppClient("recyclebuddy-opnht");
