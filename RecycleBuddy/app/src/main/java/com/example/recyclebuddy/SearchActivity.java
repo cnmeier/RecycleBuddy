@@ -62,12 +62,16 @@ public class SearchActivity extends AppCompatActivity {
 
                 // Connecting to Food Data website to search for products
                 AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter(query);
+
+                TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+                addItemEntitys(tableLayout, "SEARCH: "+ query.replace("+", " ").toUpperCase());
+
                 try {
                     String descripAndBrand = foodSearch.execute().get();
                     String[] itemsSplit = descripAndBrand.split("&");
                     for(int i = 0; i < itemsSplit.length; i++){
                         // Make the things
-                        TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+                        tableLayout = (TableLayout) findViewById(R.id.tableLayout);
                         addItemEntitys(tableLayout, itemsSplit[i]);
                     }
 
@@ -149,8 +153,8 @@ public class SearchActivity extends AppCompatActivity {
         layout.addView(tableRow);
         // Add text view to the new row
         TextView textView = new TextView(getApplicationContext());
-        textView.setTextSize(18f);
-        textView.setTextColor(Color.BLACK);
+        textView.setTextSize(24f);
+        textView.setTextColor(Color.parseColor("#014421"));
         textView.setBackgroundColor(Color.parseColor("#DDDDDD"));
 
         //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
