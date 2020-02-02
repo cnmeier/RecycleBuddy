@@ -14,6 +14,8 @@ import android.widget.SearchView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.lang.reflect.Array;
 import java.util.*;
 import java.io.BufferedReader;
@@ -24,6 +26,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
+import java.util.regex.Pattern;
 
 import static java.lang.String.valueOf;
 
@@ -56,13 +59,10 @@ public class SearchActivity extends AppCompatActivity {
 
                 // Connecting to Food Data website to search for products
                 AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter(query);
-                try {
-                    String items = foodSearch.execute().get().toString();
-                } catch(ExecutionException e) {
-                    Log.w("SearchActivity", e);
-                } catch(InterruptedException e) {
-                    Log.w("SearchActivity", e);
-                }
+
+                foodSearch.execute();
+
+
                 return false;
             }
 
@@ -143,6 +143,8 @@ public class SearchActivity extends AppCompatActivity {
 
         @Override
         public String doInBackground(String... params) {
+            String description;
+            String brandOwner;
             try {
                 // Address to Food Data website, will allow us to search for foods in their database
                 url = new URL("https://api.nal.usda.gov/fdc/v1/search?api_key=" + apiKey + "&generalSearchInput=" + this.query + "&requireAllWords=True");
@@ -200,7 +202,28 @@ public class SearchActivity extends AppCompatActivity {
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
                         String item = map.values().toString().split("\\{")[i];
                         items += "$" + item;
-                        Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
+                        //Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
+                        try {
+                            if(item.contains("additionalDescription")) {
+                                String resultString = StringUtils.substringBetween(item, "description=", ", additionalDescriptions");
+                                Log.w("SearchActivity", resultString);
+                                description = resultString;
+                            } else if(item.contains("dataType")){
+                                String resultString = StringUtils.substringBetween(item, "description=", ", dataType");
+                                Log.w("SearchActivity", resultString);
+                                description = resultString;
+                            }else{
+                                continue;
+                            }if(item.contains("brandOwner")){
+                                String resultString = StringUtils.substringBetween(item, "brandOwner=", ", ingredients");
+                                Log.w("SearchActivity", resultString);
+                                brandOwner = resultString;
+
+                            }
+                        }catch(Exception e){
+                            Log.w("Search", e);
+                        }
+
                     }
                     return (items);
                 } else {
