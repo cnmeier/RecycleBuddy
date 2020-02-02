@@ -43,7 +43,6 @@ public class SearchActivity extends AppCompatActivity {
     public static final int READ_TIMEOUT = 15000;
     final String apiKey = "TwhquiE2SVeARzinThNtPGrYntlANHxUpyI7iXGc";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         searchtext  = (SearchView) findViewById(R.id.simpleSearchView);
-        //searchbutton = (Button) findViewById(R.id.searchButton);
+        searchbutton = (Button) findViewById(R.id.searchButton);
 
         searchtext.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
             @Override
@@ -72,7 +71,6 @@ public class SearchActivity extends AppCompatActivity {
                     if(descripAndBrand != ""){
                         String[] itemsSplit = descripAndBrand.split("&");
                         for(int i = 0; i < itemsSplit.length; i++){
-                            // Make the things
                             tableLayout = (TableLayout) findViewById(R.id.tableLayout);
                             addItemEntitys(tableLayout, itemsSplit[i].toLowerCase());
                         }
@@ -158,23 +156,21 @@ public class SearchActivity extends AppCompatActivity {
         tableRow.setBackgroundColor(Color.parseColor("#DDDDDD"));
 
         layout.addView(tableRow);
+
         // Add text view to the new row
         TextView textView = new TextView(getApplicationContext());
         textView.setTextSize(24f);
         textView.setTextColor(Color.parseColor("#014421"));
         textView.setBackgroundColor(Color.parseColor("#a1b943"));
 
-        //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
         textView.setText(descripAndBrand);
-        textView.setHeight(200);
-        //textView.setWidth(TableLayout.LayoutParams.WRAP_CONTENT);
 
+        textView.setHeight(200);
         textView.setWidth(1100);
+
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
 
-
         tableRow.addView(textView);
-
     }
 
     /**
@@ -187,9 +183,6 @@ public class SearchActivity extends AppCompatActivity {
         AsyncRetrieveFilter(String query){
             this.query = query;
         }
-
-        //addItemEntitys(tableLayout, allItems);
-
 
         @Override
         public String doInBackground(String... params) {
@@ -210,9 +203,6 @@ public class SearchActivity extends AppCompatActivity {
                 conn.setConnectTimeout(CONNECTION_TIMEOUT);
                 conn.setRequestMethod("GET");
 
-                // setDoOutput to true as we receive data from json file
-                //conn.setRequestProperty("Content-Type", "application/json");
-                //conn.setRequestProperty("Accept", "application/json");
                 Log.w("SearchActivity", conn.getRequestMethod());
                 Log.w("SearchActivity", conn.getHeaderField(0));
 
@@ -253,7 +243,7 @@ public class SearchActivity extends AppCompatActivity {
                     // Start at 2
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
                         String item = map.values().toString().split("\\{")[i];
-                        //items += "$" + item;
+
                         //Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
                         try {
                             if(item.contains("additionalDescription")) {
@@ -281,9 +271,6 @@ public class SearchActivity extends AppCompatActivity {
                         catch(Exception e){
                             Log.w("Search", e);
                         }
-
-
-
                     }
                     return (items);
                 } else {
@@ -300,10 +287,4 @@ public class SearchActivity extends AppCompatActivity {
 
         }
     }
-
-
-
-
-
-
 }
