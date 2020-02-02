@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -34,6 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         Button submit = (Button) findViewById(R.id.signupID);
         EditText email = (EditText) findViewById(R.id.emailID);
         EditText password = (EditText) findViewById(R.id.passwordID);
+        EditText password2 = (EditText) findViewById(R.id.passwordConfID);
         String emailText;
         String passwordText;
         submit.setOnClickListener(
@@ -41,10 +43,16 @@ public class SignupActivity extends AppCompatActivity {
                 {
                     public void onClick(View view)
                     {
+                        String passwordText = password.getText().toString();
+                        String passwordText2 = password2.getText().toString();
                         String emailText = email.getText().toString();
                         Log.w("SignupActivity", emailText);
-                        String passwordText = password.getText().toString();
                         Log.w("SignupActivity", passwordText);
+
+                        if(!passwordText.equals(passwordText2)) {
+                            showDialog();
+                            return;
+                        }
                         signup(emailText, passwordText);
                         cancel(view);
                     }
@@ -82,5 +90,11 @@ public class SignupActivity extends AppCompatActivity {
     public void cancel(View v) {
         Intent intent = new Intent(this, MainActivity.class);
         this.startActivity(intent);
+    }
+
+    public void showDialog() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Passwords don't match!");
+        alert.show();
     }
 }
