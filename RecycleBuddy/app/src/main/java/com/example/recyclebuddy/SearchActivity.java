@@ -72,7 +72,7 @@ public class SearchActivity extends AppCompatActivity {
                     for(int i = 0; i < itemsSplit.length; i++){
                         // Make the things
                         tableLayout = (TableLayout) findViewById(R.id.tableLayout);
-                        addItemEntitys(tableLayout, itemsSplit[i]);
+                        addItemEntitys(tableLayout, itemsSplit[i].toLowerCase());
                     }
 
                 }catch(ExecutionException e){
