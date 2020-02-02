@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -47,11 +48,11 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         final SearchView searchtext;
-        final Button searchbutton;
+        final ImageView searchbutton;
         setContentView(R.layout.activity_search);
 
         searchtext  = (SearchView) findViewById(R.id.simpleSearchView);
-        searchbutton = (Button) findViewById(R.id.searchButton);
+        searchbutton = (ImageView) findViewById(R.id.searchButton);
 
         searchtext.setOnQueryTextListener(new SearchView.OnQueryTextListener()  {
             @Override
