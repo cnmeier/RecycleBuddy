@@ -164,11 +164,10 @@ public class SearchActivity extends AppCompatActivity {
         textView.setTextSize(24f);
         textView.setTextColor(Color.parseColor("#014421"));
         textView.setBackgroundColor(Color.parseColor("#a1b943"));
-
+        
         textView.setText(descripAndBrand);
 
-        //textView.setHeight(200);
-        textView.setPadding(0,0, 20, 20);
+        textView.setPadding(0,20, 20, 0);
         textView.setWidth(1100);
 
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
