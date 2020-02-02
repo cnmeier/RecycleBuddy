@@ -151,6 +151,7 @@ public class SearchActivity extends AppCompatActivity {
     public void addItemEntitys(TableLayout layout, String descripAndBrand){
 
         Log.w("SearchActivity", descripAndBrand);
+        descripAndBrand += "\n---------------------------------------------";
         TableRow tableRow = new TableRow(getApplicationContext());
         tableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, 200));
 
