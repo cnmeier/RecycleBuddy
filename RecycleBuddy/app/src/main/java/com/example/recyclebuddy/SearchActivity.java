@@ -155,7 +155,7 @@ public class SearchActivity extends AppCompatActivity {
         TextView textView = new TextView(getApplicationContext());
         textView.setTextSize(24f);
         textView.setTextColor(Color.parseColor("#014421"));
-        textView.setBackgroundColor(Color.parseColor("#DDDDDD"));
+        textView.setBackgroundColor(Color.parseColor("#a1b943"));
 
         //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
         textView.setText(descripAndBrand);
