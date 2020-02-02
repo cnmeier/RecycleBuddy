@@ -38,25 +38,13 @@
         />
 
     <Button
-        android:id="@+id/changePassword"
-        style="@style/TextStyle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="28sp"
-        android:text="Change Password"
-        android:layout_below="@id/profilePic"
-        android:textAllCaps="false"
-        android:onClick="goChange"
-        />
-
-    <Button
         android:id="@+id/logout"
         style="@style/TextStyle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textSize="28sp"
         android:text="Logout"
-        android:layout_below="@id/changePassword"
+        android:layout_below="@id/profilePic"
         android:textAllCaps="false"
         android:onClick="goLogin"
         />
