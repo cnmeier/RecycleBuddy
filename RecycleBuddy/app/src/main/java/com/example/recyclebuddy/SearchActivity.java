@@ -1,5 +1,3 @@
-// Chelsea is the best
-
 package com.example.recyclebuddy;
 
 import android.content.Intent;
