@@ -88,11 +88,6 @@ public class SearchActivity extends AppCompatActivity {
                 return false;
             }
         });
-
-
-
-
-
     }
 
     /**
@@ -161,7 +156,9 @@ public class SearchActivity extends AppCompatActivity {
         //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
         textView.setText(descripAndBrand);
         textView.setHeight(200);
-        textView.setWidth(220);
+        //textView.setWidth(TableLayout.LayoutParams.WRAP_CONTENT);
+
+        textView.setWidth(1100);
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
 
 
@@ -264,7 +261,7 @@ public class SearchActivity extends AppCompatActivity {
                                 String resultString = StringUtils.substringBetween(item, "brandOwner=", ", ingredients");
                                 Log.w("SearchActivity", resultString);
                                 brandOwner = resultString;
-                                items += brandOwner;
+                                items += "\n" + brandOwner;
 
                             }
                             items += "&";
