@@ -3,7 +3,7 @@
 #### HoyaHacks Spring 2020
 
 ## Premise
-In working to tackle the challenge of getting more people to composte and recycle, we realized many are not well educated on the types of materials that are compostable / recyclable. In creating Recycle Buddy, we aimed to create a simple and easy interaction between our users and the information available on everyday foods so we could streamline this knowledge, making it that much easier to make a positve impact on our enviornment and our users. Recycle Buddy uses publicly available information detailing the sepcifics of everyday food items to inform our users what exactly they're throwing away; additionally, Recycle Buddy implements a secured online database webhosting platform that allowed us to keep our users' information and accounts secured. This provided a way to authenticate and better track our users upon login.
+In working to tackle the challenge of getting more people to compost and recycle, we realized many are not well educated on the types of materials that are compostable / recyclable. In creating Recycle Buddy, we aimed to create a simple and easy interaction between our users and the information available on everyday foods so we could streamline this knowledge, making it that much easier to make a positve impact on our enviornment and our users. Recycle Buddy uses publicly available information detailing the sepcifics of everyday food items to inform our users what exactly they're throwing away; additionally, Recycle Buddy implements a secured online database webhosting platform that allowed us to keep our users' information and accounts secured. This provided a way to authenticate and better track our users upon login.
 
 ## What We Used:
 ### USDA FoodData Central Database
