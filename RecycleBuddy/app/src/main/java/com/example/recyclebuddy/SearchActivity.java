@@ -62,9 +62,20 @@ public class SearchActivity extends AppCompatActivity {
 
                 // Connecting to Food Data website to search for products
                 AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter(query);
+                try {
+                    String descripAndBrand = foodSearch.execute().get();
+                    String[] itemsSplit = descripAndBrand.split("&");
+                    for(int i = 0; i < itemsSplit.length; i++){
+                        // Make the things
+                        TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+                        addItemEntitys(tableLayout, itemsSplit[i]);
+                    }
 
-                foodSearch.execute();
-
+                }catch(ExecutionException e){
+                    Log.w("SearchActivity", e);
+                }catch(InterruptedException e){
+                    Log.w("SearchActivity", e);
+                }
 
                 return false;
             }
@@ -132,7 +143,9 @@ public class SearchActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
-    public void addItemEntity(TableLayout layout, String description, String brandOwner){
+    public void addItemEntitys(TableLayout layout, String descripAndBrand){
+
+        Log.w("SearchActivity", descripAndBrand);
         TableRow tableRow = new TableRow(getApplicationContext());
         tableRow.setLayoutParams(new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, 200));
 
@@ -146,7 +159,7 @@ public class SearchActivity extends AppCompatActivity {
         textView.setBackgroundColor(Color.parseColor("#DDDDDD"));
 
         //String next_bid = "Next bid: \n$" + item.split(";")[2].replace("_", "");
-        textView.setText(description + " " + brandOwner);
+        textView.setText(descripAndBrand);
         textView.setHeight(200);
         textView.setWidth(220);
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -226,37 +239,41 @@ public class SearchActivity extends AppCompatActivity {
                     ObjectMapper mapper = new ObjectMapper();
                     Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
                     Log.w("SearchActivity",map.values().toString());
-                    
+
                     String items  = "";
 
                     // Start at 2
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
                         String item = map.values().toString().split("\\{")[i];
-                        items += "$" + item;
+                        //items += "$" + item;
                         //Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
                         try {
                             if(item.contains("additionalDescription")) {
                                 String resultString = StringUtils.substringBetween(item, "description=", ", additionalDescriptions");
                                 Log.w("SearchActivity", resultString);
                                 description = resultString;
+                                items += description;
                             } else if(item.contains("dataType")){
                                 String resultString = StringUtils.substringBetween(item, "description=", ", dataType");
                                 Log.w("SearchActivity", resultString);
                                 description = resultString;
+                                items += description;
                             }else{
                                 continue;
                             }if(item.contains("brandOwner")){
                                 String resultString = StringUtils.substringBetween(item, "brandOwner=", ", ingredients");
                                 Log.w("SearchActivity", resultString);
                                 brandOwner = resultString;
+                                items += brandOwner;
 
                             }
-                        }catch(Exception e){
+                            items += "&";
+                        }
+
+                        catch(Exception e){
                             Log.w("Search", e);
                         }
-                        // Make the things
-                        TableLayout tableLayout = (TableLayout) findViewById(R.id.tableLayout);
-                        addItemEntity(tableLayout, description, brandOwner);
+
 
 
                     }
