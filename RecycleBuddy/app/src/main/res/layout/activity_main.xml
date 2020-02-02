@@ -87,7 +87,7 @@
         android:id="@+id/forgotpassword"
         style="@style/LabelStyle"
         android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_below="@+id/loginID"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="10dp"
