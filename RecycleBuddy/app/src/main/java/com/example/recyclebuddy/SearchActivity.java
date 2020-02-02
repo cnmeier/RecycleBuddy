@@ -14,6 +14,7 @@ import android.widget.SearchView;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.lang.reflect.Array;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 import static java.lang.String.valueOf;
 
@@ -54,8 +56,13 @@ public class SearchActivity extends AppCompatActivity {
 
                 // Connecting to Food Data website to search for products
                 AsyncRetrieveFilter foodSearch = new AsyncRetrieveFilter(query);
-                foodSearch.execute();
-
+                try {
+                    String items = foodSearch.execute().get().toString();
+                } catch(ExecutionException e) {
+                    Log.w("SearchActivity", e);
+                } catch(InterruptedException e) {
+                    Log.w("SearchActivity", e);
+                }
                 return false;
             }
 
@@ -188,11 +195,14 @@ public class SearchActivity extends AppCompatActivity {
                     ObjectMapper mapper = new ObjectMapper();
                     Map<String,Object> map = mapper.readValue(result.toString(), Map.class);
                     Log.w("SearchActivity",map.values().toString());
+                    String items  = "";
                     // Start at 2
                     for(int i = 2; i < map.values().toString().split("\\{").length; i++) {
+                        String item = map.values().toString().split("\\{")[i];
+                        items += "$" + item;
                         Log.w("SearchActivity", map.values().toString().split("\\{")[i]);
                     }
-                    return (result.toString());
+                    return (items);
                 } else {
 
                     return ("unsuccessful");
