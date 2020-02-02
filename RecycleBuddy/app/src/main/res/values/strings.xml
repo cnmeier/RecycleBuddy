@@ -13,6 +13,7 @@
     <string name="recycle_label">Recycling</string>
     <string name="compost_label">Composting</string>
     <string name="trash_label">Trash</string>
+    <string name="forgotpassword_label">Forgot password?</string>
 
     <string name="do_recycle_bulleted_list">
         <li>Rigid plastics/bottles </li>\n
