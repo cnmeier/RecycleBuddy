@@ -42,7 +42,7 @@ public class SearchActivity extends AppCompatActivity {
     HttpURLConnection conn;
     public static final int CONNECTION_TIMEOUT = 10000;
     public static final int READ_TIMEOUT = 15000;
-    final String apiKey = "TwhquiE2SVeARzinThNtPGrYntlANHxUpyI7iXGc";
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
